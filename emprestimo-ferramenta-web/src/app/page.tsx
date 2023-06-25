@@ -19,8 +19,8 @@ export default function Home() {
         
         }}>
        <Tabela dados={[
-  { nome: "Nome 1", numero: "123456789", email: "email1@example.com" },
-  { nome: "Nome 2", numero: "987654321", email: "email2@example.com" }
+  {id:1, nome: "Nome 1", numero: "123456789", email: "email1@example.com" },
+  {id:2, nome: "Nome 2", numero: "987654321", email: "email2@example.com" }
 ]}/>
         
       </div>

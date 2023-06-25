@@ -1,13 +1,15 @@
 import Ferramenta from "./Ferramenta";
 import Amigos from "./Amigos";
 class Emprestimo{
+    private id: number;
     private dataDeEmprestimo: Date;
     private dataDeDevolucao: Date ;
     private dataEntregue!: Date ;
     private ferramenasEmprestadas: Array<Ferramenta>;
     private amigo: Amigos;
 
-constructor(dataDeEmprestimo: Date, dataDeDevolucao: Date, ferramenasEmprestadas: Array<Ferramenta>, amigo: Amigos){
+constructor(id:number,dataDeEmprestimo: Date, dataDeDevolucao: Date, ferramenasEmprestadas: Array<Ferramenta>, amigo: Amigos){
+    this.id = id;
     this.dataDeEmprestimo = dataDeEmprestimo;
     this.dataDeDevolucao = dataDeDevolucao;
     this.ferramenasEmprestadas = ferramenasEmprestadas;

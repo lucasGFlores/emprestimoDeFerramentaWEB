@@ -1,9 +1,11 @@
 class Amigos{
+       private id : number;
     private nome : string;
     private numero : string;
     private email : string;
- constructor(nome : string, numero: string,email: string){
-        this.nome = nome;
+ constructor(id:number,nome : string, numero: string,email: string){
+       this.id = id; 
+       this.nome = nome;
         this.numero = numero;
         this.email = email;
  }

@@ -1,53 +1,42 @@
 import React from "react";
 import "@/styles/tabela.css";
-interface KeyUpdate { [key: string]: string | number}
-interface Amigos extends KeyUpdate  {nome: string, numero:string,email:string}
-interface Emprestimo  {dataDeEmprestimo: Date, dataDeDevolucao: Date, dataEntregue?: Date}
-interface Ferramenta {nome:string, preco: number, fabricante: string}
-interface Fabricante extends KeyUpdate  {nome:string, cnpj: string}
-
+interface KeyUpdate { [key: string]: string | number |Date |undefined}
+interface Amigos extends KeyUpdate  {id:number,nome: string, numero:string,email:string}
+interface Emprestimo extends KeyUpdate {id:number,dataDeEmprestimo: Date, dataDeDevolucao: Date, dataEntregue?: Date}
+interface Ferramenta extends KeyUpdate {id:number,nome:string, preco: number, fabricante: string}
+interface Fabricante extends KeyUpdate  {id:number,nome:string, cnpj: string}
 interface TabelaProps { //colocar no principal (override em todos os componentes)
-  dados: Amigos[] ; 
+  dados: Amigos[] | Ferramenta[] | Fabricante[] | Emprestimo[]; 
 }
-function teste(){}
-function Tabela ({ dados }: TabelaProps){
-    let keys = Object.keys(dados[0]);
-    let func: Array<Function> = [teste,(item: Amigos) => {
+ function listagem(item: Amigos  | Ferramenta | Fabricante | Emprestimo){
         let keys = Object.keys(item);
         return (
-          <tr key={item.nome}>
+          <tr key={item.id}>
             {keys.map((key: string) => {
-              return <td>{item[`${key}`]}</td>;
+              return <td>{item[`${key}`]?.toString() ?? "Não informado"}
+              </td>;
             })}
           </tr>
         );
-      }]
+      
+}
+function Tabela ({ dados }: TabelaProps){
+    let keys = Object.keys(dados[0]);
   return (
     <table className="tabela">
-        {/*  essa parte deixa na principal*/}
       <thead>
         <tr>
-          {Object.keys(dados[0]).map((item) => (
+          {keys.map((item) => (
             <th>{item.toUpperCase()}</th>
           ))}
         </tr>
       </thead>
-      {/* ---------------------------------- */}
 
-      {/*  essa parte vai ser refeita por Override*/}
       <tbody>
-        {dados.map((item: Amigos) => {
-          let keys = Object.keys(item);
-          return (
-            <tr key={item.nome}>
-              {keys.map((key: string) => {
-                return <td>{item[`${key}`]}</td>;
-              })}
-            </tr>
-          );
+        {dados.map((item: Amigos  | Ferramenta | Fabricante | Emprestimo) => {
+          return listagem(item);
         })}
       </tbody>
-      {/*----------------------------------------*/}
     </table>
   );
 };
