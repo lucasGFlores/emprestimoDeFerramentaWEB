@@ -1,0 +1,19 @@
+{
+  "name": "backendserber",
+  "version": "1.0.0",
+  "description": "backend do projeto de emprestimo de ferramentas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasGFlores/emprestimoDeFerramentaWEB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasGFlores/emprestimoDeFerramentaWEB/issues"
+  },
+  "homepage": "https://github.com/lucasGFlores/emprestimoDeFerramentaWEB#readme"
+}
