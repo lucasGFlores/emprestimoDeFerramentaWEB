@@ -15,7 +15,7 @@ function Tabela ({ dados }: TabelaProps){
     let keys = Object.keys(dados[0]);
   return (
     <table className="tabela">
-      <thead>
+      <thead >
         <tr>
           {keys.map((item) => (
             <th>{item.toUpperCase()}</th>
@@ -31,6 +31,9 @@ function Tabela ({ dados }: TabelaProps){
     </table>
   );
 };
+
+
+
 function listagem(item: Amigos  | Ferramenta | Fabricante | Emprestimo){
     let keys = Object.keys(item);
     return (
