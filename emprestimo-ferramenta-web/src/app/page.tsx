@@ -6,16 +6,21 @@ import "@/styles/Principal.css";
 export default function Home() {
   let amigos = new Amigos(1, "teste", "teste", "teste");
   return (
-    <div className="containerTable"
-    >
-      <div className="boton"
-  
+    <div className="containerTable" >
+      <div style={{marginRight:"50%"}}>
+      <div id="boton"
+      style={{
+        display: "flex",
+        alignItems: "flex-end",
+        
+
+      }}
       >
         <h1> roger</h1>
         <h1> roger</h1>
         <h1> roger</h1>
       </div>
-
+      </div>
       <div className="tabelaBox"
       style={
         {
@@ -48,5 +53,6 @@ export default function Home() {
         />
       </div>
     </div>
+ 
   );
 }

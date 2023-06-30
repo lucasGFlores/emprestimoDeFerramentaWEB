@@ -1,12 +1,12 @@
-.containerTable{
-    position: relative;
+.containerTable {
     display: flex;
-    flex-direction: column ;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+  }
+/*   
+  .containerTable button {
+    left: 0;
+    margin-left: 0;
 
-}
-.boton{
-    display: flex;
-
-}
+  }  */
