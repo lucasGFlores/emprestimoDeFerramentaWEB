@@ -17,8 +17,8 @@ function Tabela ({ dados }: TabelaProps){
     <table className="tabela">
       <thead >
         <tr>
-          {keys.map((item) => (
-            <th>{item.toUpperCase()}</th>
+          {keys.map((item : string) => (
+            <th key={item}>{item.toUpperCase()}</th>
           ))}
         </tr>
       </thead>
@@ -39,7 +39,7 @@ function listagem(item: Amigos  | Ferramenta | Fabricante | Emprestimo){
     return (
       <tr key={item.id}>
         {keys.map((key: string) => {
-          return <td>{item[`${key}`]?.toString() ?? "Não informado"}
+          return <td key={item['id']}>{item[`${key}`]?.toString() ?? "Não informado"}
           </td>;
         })}
       </tr>
