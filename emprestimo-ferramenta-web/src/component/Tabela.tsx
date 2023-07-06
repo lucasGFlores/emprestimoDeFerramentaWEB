@@ -1,5 +1,5 @@
 import React from "react";
-import "@/styles/tabela.css";
+import "@/styles/Tabela.css";
 
 interface KeyUpdate { [key: string]: string | number |Date |undefined}
 interface Amigos extends KeyUpdate  {id:number,nome: string, numero:string,email:string}
@@ -18,12 +18,12 @@ function Tabela ({ dados }: TabelaProps){
       <thead >
         <tr>
           {keys.map((item : string) => (
-            <th key={item}>{item.toUpperCase()}</th>
+            <th  key={item}>{item.toUpperCase()}</th>
           ))}
         </tr>
       </thead>
 
-      <tbody>
+      <tbody className="hover">
         {dados.map((item: Amigos  | Ferramenta | Fabricante | Emprestimo) => {
           return listagem(item);
         })}

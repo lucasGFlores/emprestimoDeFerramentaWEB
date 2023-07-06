@@ -1,36 +1,52 @@
+// 'use client'
+import Image from "next/image";
+export default async function BotaoLista({
+  icon,
+  name,
+  onClick,
+}: {
+  icon?: string;
+  name?: string;
+  onClick?: Function;
+}) {
+  return (
+    <div
+      onClick={() => onClick?.()}
+      style={{
+        marginLeft: "11px",
+        width: 112,
+        height: 57,
+        position: "relative",
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          
+          position: "absolute",
+          background: "#5E79DB",
+          borderRadius: "15px 15px 0 0 ",
 
-'use client'
-export default async function BotaoLista({icon, name,handler} : {icon? : string, name?: string , handler? : Function}){
-    return(
-        
-        <div onClick={() => handler} style={{marginLeft:"11px", width: 110, height: 45, position: "relative" }}>
-        
-        <div
-          style={{
-            width: 110,
-            height: 45,
-            left: 0,
-            top: 0,
-            position: "absolute",
-            background: "#5E79DB",
-            // boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            borderRadius: 17,
-          }}
-        />
-        <div style={{position:"absolute", zIndex:1}}>
-        <p style={{}}>{name}</p>
-        </div>
-        
-        <div
-          style={{
-            width: 110,
-            height: 31,
-            left: 0,
-            top: 14.23,
-            position: "absolute",
-            background: "#5E79DB",
-          }}
-        />
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          zIndex: 1,
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <p style={{ paddingTop: "5px",fontSize:"15px" }}>{name}</p>
+        {icon != undefined ? (
+          <Image src={`/${icon}.png`} alt={"sexo"} width={35} height={35} />
+        ) : null}
       </div>
-    )
+    </div>
+  );
 }

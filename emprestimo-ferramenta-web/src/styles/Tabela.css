@@ -1,19 +1,30 @@
 .tabela {
     width: 100%;
+    
     border-collapse: collapse;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
   }
-  
-  .tabela th {
-
-    color: black;
+  /* cabeçalho */
+  .tabela th { 
+    color: white;
+    background-color: #009879;
     border-bottom: 1px solid #ddd;
     padding: 8px;
-    font-weight: bold;
-    text-align: left;
   }
-  
+
+  /* informações */
   .tabela td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1.9px solid #ddd;
     padding: 15px;
-    border: 5px;
+  }
+
+  /* blocos tanto do cabeçalho como das informações, como divs */
+  .tabela .hover tr:hover {
+    background-color: rgba(50, 146, 98, 0.651);
+    color: white;
+  }
+  /* não sei se eu mantenho isso aqui, pode causar conflito no futuro */
+.tabela tbody tr:nth-child(even){
+    background-color: #dbe9c863;
   }
