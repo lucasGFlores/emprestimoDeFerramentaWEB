@@ -1,6 +1,6 @@
 import Image from "next/image";
 type Amigos = {nome: string, numero:string,email:string}
-import styles from "./page.module.css";
+import styles from "@/styles/Home.module.css";
 import Tabela from "@/component/Tabela";
 export default function Home() {
   return (
